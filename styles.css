@@ -183,6 +183,9 @@ p a:hover{
 }
 .form{
     padding: 0 0 0 3%;
+    display: flex;
+    flex-flow: column wrap;    
+    align-items: baseline;
 }
 .form label{
     padding-right: 10px;
@@ -204,6 +207,7 @@ p a:hover{
     border-bottom:1px solid rgb(194, 32, 133);
     padding-left:1%;
     margin-bottom: 3%;
+    
 }
 .form textarea:focus{
     border: none;
