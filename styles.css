@@ -595,20 +595,13 @@ h2{
     /* width: 0; */
     z-index: 8;
     background-color: whitesmoke;
-    
-}
-.tile126{
-    right: 0;    
-    top: 6.25vh;
-    height: 6.25vh;
-    /* height: 0; */
-    width: 6.25vw;
-    z-index: 8;
-    background-color: tomato;
-    
     font-size: 1.3em;
+    color: black;
 }
-
+.tile66 a{
+    color: black;
+    border-color:black ;
+}
 .tile126{
     right: 0;    
     top: 6.25vh;
@@ -617,6 +610,7 @@ h2{
     width: 6.25vw;
     z-index: 8;
     background-color: tomato;
+    
     
 }
 .tile1212{   
