@@ -265,15 +265,12 @@ h2{
     left: 20vw;
     width: 20vw;
     height: 10vh;
-    
+    color: #29C7AC;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 }
-.skill-center p{
-    color: #29C7AC;
-    font-weight: bold;
-}
+
 
 .skill1{
     animation: circle 112s linear infinite; 
@@ -824,6 +821,9 @@ h2{
     .project-info:hover .project-body{
         height: 10vh;
         color:white;
+    }
+    .resume-download{
+        top: 4vh;
     }
 }
 
