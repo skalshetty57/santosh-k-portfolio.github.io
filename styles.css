@@ -143,10 +143,12 @@ em{
 div .message{
     padding: 3% 0 3% 3%;
 }
+
 .message p{
     padding:0;
     margin:0 ;
 }
+
 p a{
     padding: 0;
     display: inline-block;
@@ -808,6 +810,7 @@ h2{
     }
     .content{
         padding: 15vh 2vw 5vw 4vh;
+        font-size: 1.55em;
     }
     .home-content-left{
         padding-left: 10vw;
@@ -823,7 +826,7 @@ h2{
         color:white;
     }
     .resume-download{
-        top: 4vh;
+        top: 3vh;
     }
 }
 
