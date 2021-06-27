@@ -9,28 +9,41 @@
     <title>Home</title>
 </head>
 <body>
-<div>
-    
+
+    <!-- <div class="side_nav">
+        <ul class="link_names">
+            
+            <li class="link active" id="link1" ><a href="Home.html">HOME</a></li>
+            <li class="link" id="link2"><a href="Projects.html">PROJECTS</a></li>
+            <li class="link" id="link3"><a href="About-me.html">ABOUT ME</a></li>
+            <li class="link" id="link3"><a href="Resume.html"> RESUME</a></li>
+            <li class="link" id="link4"><a href="Contact_me.html">CONTACT ME</a>
+            </li>
+        </ul>
+    </div> -->
      <div id="magic-nav" >
-    <div class="tile tile66" id="magic-nav-end" onclick="endAnimation()"><a href='#'><i class="fa fa-times"></i></a></div>
-    <div class="tile tile126"  ></div>
+    <div class="tile tile66">    </div>
+    <div class="tile tile126" id="magic-nav-end" onclick="endAnimation()"><a href='#'>Close</a></div>
     <div class="tile tile1212">    </div>
     <div class="tile tile2512">    </div>
     <div class="tile tile2525">    </div>
-    <div class="tile tile5025"> <a href="Resume.html"> RESUME</a>  </div>
-    <div class="tile tile5050"> <a href="Contact_me.html"> CONTACT ME </a> </div>
-    <div class="tile tile10050"><a href="About-me.html">ABOUT ME</a>   </div>
-    <div class="tile tile100100"><a href="Projects.html">  PROJECTS </a>  </div>
+    <div class="tile tile5025"> <a href="Contact_me.html"> CONTACT ME </a> </div>
+    <div class="tile tile5050">  <a href="Resume.html"> RESUME</a> </div>
+    <div class="tile tile10050"> <a href="About-me.html">ABOUT ME</a>  </div>
+    <div class="tile tile100100"> <a href="Projects.html">  PROJECTS </a></div>
 </div>
-<div class="nav-button" onclick="startAnimation()"><i class="fa fa-bars"></i></div>
-    <div class="contents" style="padding-left: 3%;">
+
+    <div class="contents" style="padding-left: 25px;">
+        <!-- <h1><p style="margin: 0; color: #29C7AC;">HOME</p></h1> -->
+        <div class="nav-button" onclick="startAnimation()"><i class="fa fa-bars"></i></div>
+
         <div class="home-content-left">
             <p style="font-size: 4em ; color: white;">Hi
                 <span style="font-size:0.9em;font-weight: bold; color: white;">!</span></p>
             <p style="font-size: 3em; color: white;">I'm 
                 <span style="font-size: 1.33em;font-weight:bold ; color: #29C7AC;">Santosh Kalshetti</span>,</p>
             <p style="font-size: 2em ; color: white;">An aspiring web-developer, graduated in 2021</p>
-            <p style="font-size: 1.5em ; color: white;">Feel free to take a look at my <span style="text-decoration: underline; text-decoration-color: #29C7AC;">latest projects</span> on the web portfolio page</p>
+            <p style="font-size: 1.5em ; color: white;">Feel free to take a look at my latest projects on the web portfolio page</p>
 
         </div>
     </div>
@@ -44,6 +57,5 @@
             endTargetElement.className="collapse-nav-action";
         }
     </script>
-</div>
 </body>
 </html>

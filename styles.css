@@ -3,6 +3,8 @@
     box-sizing: border-box;
     background-color: #323232;
     color: rgb(255, 255, 255);
+    --anima-height:100vh;
+    --anima-width:100vw;
 }
 body{
     margin: 0px;
@@ -28,7 +30,7 @@ a{
 }
 
 .side_nav{
-    
+    z-index: 1;
     border-radius: 0 7px 7px 0;
     height:50%;
     width: 25%;
@@ -97,10 +99,12 @@ li.active{
     margin: 0;
 }
 .project-info{
-    padding: 3% 0 0 3%;
+    padding: 3% 0 2% 3%;
     border: 2px solid #323232;
-    height:13vh;
-    transition: height 0.5s ease-in, border 0.5s ease-in 0.5s ;  
+    
+    
+    transition: border 0.5s ease-in 0.5s ;  
+    /* --myh:pb1.height */
 }
 .project-head{
     padding:0;
@@ -113,7 +117,7 @@ li.active{
 
 .project-info:hover{
     border: 2px solid rgb(194, 32, 133);
-    height: 32vh;
+    
 }
 .project-info:hover .project-head{
     color: rgb(194, 32, 133);
@@ -131,35 +135,10 @@ em{
     transition: height .5s ease-in, color .5s ease-in 0.5s;
 }
 .project-info:hover .project-body{
-    height: 17vh;
+    height: 20vh;
     color:white;
 }
 
-.temp ul{
-    display: none;
-}
-.temp:hover ul{
-    display: block;
-}
-
-@keyframes show{
-    0%{
-        display: none;
-        opacity: 0;
-    }
-    49%{
-        display: none;
-        opacity: 0;
-    }
-    50%{
-        display: block;
-        opacity: 0;
-    }
-    100%{
-        display: block;
-        opacity: 1;
-    }
-}
 /* contact page */
 div .message{
     padding: 3% 0 3% 3%;
@@ -424,12 +403,16 @@ h2{
     float: right;
     position: relative;
     top: 6vh;
-    right: 34vw;
+    right: 2vw;
     color:#29C7AC;
     font-family: Cabin Sketch;
     padding: 0.5vh 0.5vw 0.5vh 0.5vw;
     border: 1px solid #29C7AC;
     transition: padding 0.1s ease-in, transform 0.1s ease-in;
+}
+.resume-download a{
+    padding: 0;
+    color: inherit;
 }
 .resume-download:hover{
     padding: 1vh 1vw 1vh 1vw;
@@ -438,6 +421,7 @@ h2{
 .resume{
     padding-left: 2vw;
     padding-top: 2vh;
+    padding-right: 2vw;
     font-size: 0.9em;
     /* overflow: hidden; */
     display: flex;
@@ -446,6 +430,9 @@ h2{
 .resume h3{
     margin: 0;
     font-size: 1.4em;
+}
+.personal-info{
+    padding: 2vh 2vw 0 2vw;
 }
 .resume p{
     margin:0;
@@ -509,16 +496,35 @@ h2{
 /* home */
 
 .contents{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     
-
+    /* width: 100%; */
+    /* right: 0; */
+    /* overflow: hidden; */
+    
+}
+.nav-button{
+    font-size: inherit;
+    height: 4em;
+    width: 4em;
+    padding:0;
+    margin: 0.5em 0.5em 0 0;
+    border: 2px solid #29C7AC;
+    position: absolute;
+    top: 2em;
+    right: 2em; 
+    color: white;
+    display: flex;
+    flex: row wrap;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.1s linear, width 0.1s linear, margin 0.1s linear;
+    z-index: 2;
+}
+.nav-button i{
+    font-size: 3em;
 }
 .home-content-left{
-    padding:25vh 0 0 25vw ;
+    padding:25vh 1em 0 20vw;
     /* position: absolute; */
     width:100%
 }
@@ -529,26 +535,10 @@ h2{
     
     font-family: Cabin Sketch;
 }
-.nav-button{
-    height: 4vw;
-    width: 4vw;
-    padding:0;
-    margin: 0.5vw 0.5vw 0 0;
-    border: 2px solid #29C7AC;
-    position: absolute;
-    top: 2vh;
-    right: 2vw;
-    color: white;
-    font-size: 2em;
-    display: flex;
-    flex: row wrap;
-    justify-content: center;
-    align-items: center;
-    transition: height 0.1s linear, width 0.1s linear, margin 0.1s linear;
-}
+
 .nav-button:hover{
-    height: 5vw;
-    width: 5vw;
+    height: 5em;
+    width: 5em;
     margin: 0;
 }
 /* #nav-button::after{
@@ -595,58 +585,64 @@ h2{
     /* width: 0; */
     z-index: 8;
     background-color: whitesmoke;
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: black;
+    
 }
 .tile66 a{
+    position: relative;
+    
     color: black;
-    border-color:black ;
+    border-color: black;
+    background: black;
+    padding: 0;
 }
 .tile126{
-    right: 0;    
-    top: 6.25vh;
+    right: 6.25vw;    
+    top: 0;
     height: 6.25vh;
     /* height: 0; */
     width: 6.25vw;
     z-index: 8;
-    background-color: tomato;
+    background-color: lightgreen ;
     
     
 }
 .tile1212{   
-    top: 0;
-    right: 6.25vw; 
-    height: 12.5vh;
-    width: 6.25vw;
+    top: 6.25vh;
+    right: 0vw; 
+    height: 6.25vh;
+    width: 12.5vw;
     /* width: 0; */
     z-index: 8;
-    background-color: lightcoral;
+    background-color: tomato;
     
 }
 .tile2512{    
-    top: 12.5vh;
-    right: 0;
+    top: vh;
+    right: 12.5vw;
     height: 12.5vh;
     /* height: 0; */
     width: 12.5vw;
     z-index: 7;
-    background-color: gold;
+    background-color:gold ;
     
 }
 .tile2525{  
-    top: 0;  
-    right: 12.5vw;
-    height: 25vh;
-    width: 12.5vw;
+    top: 12.5vh;  
+    right: 0vw;
+    height: 12.5vh;
+    width: 25vw;
     /* width: 0; */
     z-index: 6;
 
     background-color: blue;
+    font-size: 1.7em;
     
 }
 .tile5025{   
-    top: 25vh;
-    right: 0; 
+    top: 0vh;
+    right: 25vw; 
     height: 25vh;
     /* height: 0; */
     width: 25vw;
@@ -655,18 +651,18 @@ h2{
     
 }
 .tile5050{    
-    top: 0;
-    right: 25vw;
-    height: 50vh;
-    width: 25vw;
+    top: 25vh;
+    right: 0vw;
+    height: 25vh;
+    width: 50vw;
     /* width: 0; */
     z-index: 4;
-    background-color: rgb(194, 32, 133);
+    background-color:rgb(194, 32, 133) ;
     
 }
 .tile10050{  
-    top: 50vh;  
-    right: 0;
+    top: 0vh;  
+    right: 50vw;
     height: 50vh;
     /* height: 0; */
     width: 50vw;
@@ -675,11 +671,11 @@ h2{
     
 }
 .tile100100{   
-    top: 0;
-    right: 50vw; 
-    height: 100vh;
+    top: 50vh;
+    right: 0vw; 
+    height: 50vh;
     /* width: 0; */
-    width: 50vw;
+    width: 100vw;
     z-index: 2;
     background-color: black;
     
@@ -696,12 +692,12 @@ h2{
 }
 @keyframes magic-collapse {
     0%{
-        height:100vh;
+        height: 100vh;
         width:100vw;
     }
     16%{
-        height: 100vh;
-        width:50vw;
+        height: 50vh;
+        width:100vw;
         
     }
     30%{
@@ -710,8 +706,8 @@ h2{
         
     }
     40%{
-        height: 50vh;
-        width:25vw;
+        height: 25vh;
+        width:50vw;
         
     }
     50%{
@@ -720,62 +716,62 @@ h2{
         
     }
     60%{
-        height: 25vh;
-        width:12.5vw;
+        height: 12.5vh;
+        width:25vw;
     }
     70%{
         height: 12.5vh;
         width:12.5vw;
     }
     80%{
-        height: 12.5vh;
-        width:6.25vw;
+        height: 6.25vh;
+        width:12.5vw;
     }
     90%{
         height: 6.25vh;
         width:6.25vw;
     }
     100%{
-        height:0;
-        width:0;
+        height: 0;
+        width:6.25vw;
     }
 }
 @keyframes magic-expand {
     0%{
         height: 0;
-        width:0;
+        width:6.25vw;
     }
     10%{
         height: 6.25vh;
         width:6.25vw;
     }
     20%{
-        height: 12.5vh;
-        width:6.25vw;
+        height: 6.25vh;
+        width:12.5vw;
     }
     30%{
         height: 12.5vh;
         width:12.5vw;
     }
     40%{
-        height: 25vh;
-        width:12.5vw;
+        height: 12.5vh;
+        width:25vw;
     }
     50%{
         height: 25vh;
         width:25vw;
     }
     60%{
-        height: 50vh;
-        width:25vw;
+        height: 25vh;
+        width:50vw;
     }
     70%{
         height: 50vh;
         width:50vw;
     }
     83%{
-        height: 100vh;
-        width:50vw;
+        height:calc(var(--anima-height)/2);
+        width:var(--anima-width);
     }
     100%{
         height: 100vh;
@@ -784,7 +780,50 @@ h2{
 }
 
 
-
-
-
+@media only screen and (max-width: 900px){
+    .side_nav{
+        height: 15vh;
+        width: 100%;
+        top: 0;
+    }
+    .content{
+        padding: 20vh 2vw 5vw 4vh;
+    }
+    .link_names{
+        /* border: 1px solid blanchedalmond; */
+        display: flex;
+        flex-flow: row;   
+    }
+    .link{
+        height: 100%;
+        width: 20%;
+        border-color: blanchedalmond;
+        
+        /* box-sizing: content-box; */
+    }
+    .link:hover{
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 600px){
+    body{
+        font-size: 8px;
+    }
+    .content{
+        padding: 15vh 2vw 5vw 4vh;
+    }
+    .home-content-left{
+        padding-left: 10vw;
+    }
+    .side_nav{
+        height: 10vh;
+        width: 100%;
+        top: 0;
+    }
+    /* for project */
+    .project-info:hover .project-body{
+        height: 10vh;
+        color:white;
+    }
+}
 
