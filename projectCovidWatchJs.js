@@ -3,6 +3,7 @@ let confirmed=[];
 let discharged=[];
 let deceased=[];
 let active=[];
+var statesLower=[];
 
 
 const api_url ="https://api.rootnet.in/covid19-in/stats/latest";
@@ -22,6 +23,7 @@ async function getapi(url) {
     
     data.data.regional.forEach(element=>{
         states.push(element.loc);
+        statesLower.push(element.loc.toLowerCase());
         confirmed.push(element.totalConfirmed);
         discharged.push(element.discharged);
         deceased.push(element.deaths);
@@ -42,6 +44,8 @@ async function getapi(url) {
     console.log(states);
 }
 getapi(api_url);
+
+
 function displayTime(date){
     let e=document.getElementById("time");
     let months={"01":"Jan","02":"Feb",
@@ -212,6 +216,8 @@ function stateExists(e){
     else if(e.which){
         keynum=e.which;
     }
+    // console.log(keynum+" "+ typeof keynum);
+    // console.log(keynum===13);
     if(keynum===13){
         displayResult(searcherText);
     }
@@ -239,10 +245,11 @@ function hideResult(){
 function displayResult(attri){
     // console.log(attri);
     
-    let idx=states.indexOf(attri);
+    let idx=statesLower.indexOf(attri.toLowerCase());
+    // console.log(attri+" "+idx);
     // console.log(idx);
     if(idx>=0){
-        document.getElementById("state-result-name").innerHTML=attri;
+        document.getElementById("state-result-name").innerHTML=states[idx];
     document.getElementById("state-confirmed").innerHTML=
     numberWithCommas(confirmed[idx]);
     document.getElementById("state-active").innerHTML=
