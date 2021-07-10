@@ -76,20 +76,20 @@ function displayTotalCount(confirmedTotal,dischargedTotal,deceasedTotal){
 function displayTable(states,confirmed,deceased,discharged,active){
     var tableBody=document.getElementById("table-body");
     for(let i=0;i<states.length;i++){
-        tableBody.innerHTML+="<tr>"+
-        "<td>"+
+        tableBody.innerHTML+="<tr class='animation-apply'>"+
+        "<td class='animation-apply'>"+
         numberWithCommas(states[i])
         +"</td>"+
-        "<td>"+
+        "<td class='animation-apply'>"+
         numberWithCommas(confirmed[i])
         +"</td>"+
-        "<td>"+
+        "<td class='animation-apply'>"+
         numberWithCommas(active[i])
         +"</td>"+
-        "<td>"+
+        "<td class='animation-apply'>"+
         numberWithCommas(discharged[i])
         +"</td>"+
-        "<td>"+
+        "<td class='animation-apply'>"+
         numberWithCommas(deceased[i])
         +"</td>"+
         "</tr>";   
