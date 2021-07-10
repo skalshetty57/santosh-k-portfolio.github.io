@@ -134,8 +134,20 @@ em{
     height: 0;
     transition: height .5s ease-in, color .5s ease-in 0.5s;
 }
+.project-body a{
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    display:block ;
+    text-decoration: underline;
+}
+.project-body a:hover{
+    color: rgb(194, 32, 133);
+}
 .project-info:hover .project-body{
-    height: 20vh;
+    height: 25vh;
     color:white;
 }
 
@@ -822,7 +834,7 @@ h2{
     }
     /* for project */
     .project-info:hover .project-body{
-        height: 10vh;
+        height: 12vh;
         color:white;
     }
     .resume-download{
