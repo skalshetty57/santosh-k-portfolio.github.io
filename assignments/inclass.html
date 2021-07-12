@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inclass.css">
+    <title>form</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="form-show" id="form-display" onclick="displayForm()">
+            Form
+        </div>
+            <!-- Form</div> -->
+        <div class="cont" id="whole-form">
+        <!-- <form action="inclass2.html" method="GET"> -->
+        <div class="sec">
+            <label for="input-email">Email : </label>
+            <input type="text" name="name" id="input-email" >
+            
+        </div>
+        <div>
+            <p id="error-email"></p>
+        </div>
+        <div class="sec center">
+            <label for="input-name">Password : </label>
+            <input type="text" name="email" id="input-name">
+            <div class="info" onclick="passwordToggle()">*</div>
+        </div>
+        <div>
+            <p id="error-pass"></p>
+        </div>
+            <div>
+            <button onclick="displayClear()" >
+                Reset
+            </button>
+            <button onclick="displayMe()" >
+                Submit
+            </button>
+        </div>
+            <div id="magic"></div>
+        </div>
+    <!-- </form> -->
+        
+    </div>
+    <script>
+        function displayClear(){
+            document.getElementById("input-email").value="";
+            document.getElementById("input-name").value="";
+            document.getElementById("error-email").innerHTML="";
+            document.getElementById("error-pass").innerHTML="";
+            document.getElementById("magic").innerHTML="";
+        }
+        function passwordToggle(){
+            let n=document.getElementById("input-name");
+            if(n.getAttribute("type")==="password")
+                n.setAttribute("type","text");
+            else
+                n.setAttribute("type","password");
+        }
+        function displayMe(){
+            let e=document.getElementById("input-email").value;
+            var n=document.getElementById("input-name").value;
+            var target=document.getElementById("magic");
+            var errorDisplay=document.getElementById("error-email");
+            var errorPass=document.getElementById("error-pass");
+            var final=e+" "+n;
+            var found=e.search('@');
+            var foundCaps;
+            var foundSpecial;
+            var foundLength;
+            var clearCond=false;
+            foundCaps=n.search(/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/g);
+            foundSpecial=n.search(/[!@#$%^&*()]/g);
+            foundLength=n.length;
+            // console.log(foundCaps);
+            if(found==-1){
+                errorDisplay.innerHTML="Invalid email, no @ present";
+            }
+            else if(found>=0){
+                errorDisplay.innerHTML="Accepted";                       
+            
+            if(foundLength<8){
+                errorPass.innerHTML="Length short";
+            }
+            else if(foundCaps==-1){
+                errorPass.innerHTML="No caps";
+            }
+            else if(foundSpecial==-1){
+                errorPass.innerHTML="No special";
+            }
+            else{
+                errorPass.innerHTML="Accepted";
+                clearCond=true;
+                target.innerHTML="Hi "+e.substring(0,found);
+            }
+            }
+            if(clearCond===true){
+                document.location.href="inclass2.html?"+e.substring(0,found);
+            }
+
+        }
+        function displayForm(){
+            let former=document.getElementById("whole-form");
+            if(former.style.display=="none"){
+                former.style.display="flex";
+            }
+            else{
+                former.style.display="none"
+            }
+        }
+    </script>
+</body>
+</html>
