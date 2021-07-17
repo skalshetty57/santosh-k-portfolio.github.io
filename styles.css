@@ -834,7 +834,7 @@ h2{
     }
     /* for project */
     .project-info:hover .project-body{
-        height: 12vh;
+        height: 16vh;
         color:white;
     }
     .resume-download{
