@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projectGraphPlotterStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Graph plotter</title>
+</head>
+<body>
+    <div class="super-cont">
+        <div class="header">
+            <div class="header-left"><a href="../Projects.html"><i class="fas fa-arrow-left"></i></a></div>
+            <h1>Graph Plotter</h1>
+            <div class="header-right" onclick="autofill()">Fill</div>
+        </div>
+        <div class="center">
+            <div class="select-graph-type" id="selectGraphType">
+                <div class="highlighter graph-type" id="highlighter"></div>
+                <div class="graph-type-row" >
+                    <div class="graph-type center">Line Graph</div>
+                    <div class="graph-type center">Bar Graph</div>
+                </div>
+                <div class="graph-type-row">
+                    <div class="graph-type center">Pie chart</div>
+                    <div class="graph-type center">Radar Chart</div>
+                </div>
+            </div>
+        </div>
+        <div class="mega-cont">
+        <div class="graph-info">
+            
+            <div class="line-graph-info" id="lineGraphInfo">
+                <div class="info">
+                <div class="graph-info-util" id="graph-name-cont">
+                    <strong>Graph name :&nbsp</strong>
+                    <input type="text" class="upper-gap" name="graph-name" id="graph-name">
+                </div>
+                <div class="graph-info-util upper-gap">
+                    <h3>Y-axis :</h3>
+                    Axis title :&nbsp
+                    <input type="text" name="y-axis-title" id="y-axis-title">
+                <div class="y-axis axes-info upper-gap">
+                    <label for="y-min-range">Min :&nbsp</label>
+                    <input type="number" name="y-min-range" id="y-min-range">
+                    <label for="y-max-range">&nbspMax :&nbsp</label>
+                    <input type="number" name="y-max-range" id="y-max-range">
+                </div>
+                <div class="y-axis-value-cont upper-gap">
+                    <div class="axis-data flex-row">
+                        <span> Values :&nbsp</span>
+                        <input type="text" name="y-axis-values" id="y-axis-values">
+                    </div>
+                </div>
+                <h3>X-axis :</h3>
+                <div class="select-x-axis-type flex-row upper-gap">
+                    <span>Type : &nbsp</span>
+                    <div class="x-axis-type flex-row">
+                        <label for="x-axis-type-label">Label</label>
+                        <input type="radio" name="x-axis-type-b" id="x-axis-type-label" value="label" onclick="lineGraphType()" checked>
+                        <label for="x-axis-type-value">Value</label>
+                        <input type="radio" name="x-axis-type-b" id="x-axis-type-value" value="value" onclick="lineGraphType()">
+                    </div>
+                </div>
+                <!-- if value -->
+                <div id="x-axis-value-cont">
+                    <div class="upper-gap">Axis title :&nbsp
+                        <input type="text" name="x-axis-title-value" id="x-axis-title-value">
+                        </div>
+                    <div class="axes-info upper-gap">
+                    
+                    <label for="x-min-range">Min :&nbsp</label>
+                    <input type="number" name="x-min-range" id="x-min-range">
+                    <label for="x-max-range">&nbspMax :&nbsp</label>
+                    <input type="number" name="x-max-range" id="x-max-range">
+                    </div>
+                    <div class="axis-data flex-row upper-gap">
+                        <span>Values :&nbsp</span>
+                        <input type="text" name="x-axis-values" id="x-axis-values">
+                    </div>
+                </div>
+                <!-- if label -->
+                <div id="x-axis-label-cont">
+                    <div class="upper-gap">Axis title :&nbsp
+                    <input type="text" name="x-axis-title-label" id="x-axis-title-label">
+                    </div>
+                    <div class="axis-data flex-row upper-gap">
+                        <span>Labels :&nbsp</span>
+                        <input type="text" name="x-axis-labels" id="x-axis-labels">
+                    </div>
+                </div>
+
+                </div>
+                </div>
+            </div>
+            <div class="bar-graph-info" id="barGraphInfo">
+                <div class="info">
+                    <div class="graph-info-util" id="graph-name-cont">
+                        <strong>Graph name :&nbsp</strong>
+                        <input type="text" class="upper-gap" name="graph-name" id="graph-name-bar">
+                    </div>
+                <div class="graph-info-util">
+                    <h3>Y-axis  :&nbsp</h3>
+                    <div class="upper-gap">Axis title :&nbsp
+                        <input type="text" name="y-axis-title-label-bar" id="y-axis-title-label-bar">
+                        </div>
+                    <div class="y-axis axes-info upper-gap">
+                    
+                    <label for="y-min-range-bar">Min :&nbsp</label>
+                    <input type="number" name="y-min-range-bar" id="y-min-range-bar">
+                    <label for="y-max-range">&nbspMax :&nbsp</label>
+                    <input type="number" name="y-max-range-bar" id="y-max-range-bar">
+                    </div>
+                <div class="y-axis-value-cont upper-gap">
+                    <div class="axis-data flex-row">
+                        <span>Values :&nbsp</span>
+                        <input type="text" name="y-axis-values-bar" id="y-axis-values-bar">
+                    </div>
+                </div>
+                <!-- if label -->
+                <h3>X-axis</h3>
+                <div class="upper-gap">Axis title :&nbsp
+                    <input type="text" name="x-axis-title-label-bar" id="x-axis-title-label-bar">
+                    </div>
+                <div class="x-axis-label-cont upper-gap">
+                    <div class="axis-data flex-row">
+                        <span>Labels :&nbsp</span>
+                        <input type="text" name="x-axis-labels-bar" id="x-axis-labels-bar">
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="pie-chart-info" id="pieChartInfo">
+                <div class="info">
+                    <div class="graph-info-util" id="graph-name-cont">
+                        <strong>Graph name :&nbsp</strong>
+                        <input type="text" class="upper-gap" name="graph-name" id="pie-chart-name">
+                    </div>
+                <div class="graph-info-util">
+                <div class="x-axis-label-cont upper-gap">
+                    <div class="axis-data flex-row">
+                        <span><strong>Labels :&nbsp</strong></span>
+                        <input type="text" name="pie-chart-labels" id="pie-chart-labels">
+                    </div>
+                </div>
+                <div class="y-axis-value-cont upper-gap">
+                    <div class="axis-data flex-row">
+                        <span><strong>Values :&nbsp</strong></span>
+                        <input type="text" name="pie-chart-values" id="pie-chart-values">
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="radar-chart-info" id="radarChartInfo">
+                <div class="info">
+                    <div class="graph-info-util" id="graph-name-cont">
+                        <strong>Graph name :&nbsp</strong>
+                        <input type="text" class="upper-gap" name="radar-chart-name" id="radar-chart-name">
+                    </div>
+                <div class="graph-info-util">
+                <div class="stat-category">
+                    <h3>Stat 1</h3>
+                    <div class="stat-name">
+                        <span>Name :&nbsp</span>
+                        <input type="text" name="stat-name-1" id="stat-name-1" >
+                    </div>
+                    <h3>Value</h3>
+                    <div class="stat-value flex-row1">
+                        
+                        <label for="stat-1-value">Current  :&nbsp</label>
+                        <input type="text"   name="stat-1-value" id="stat-1-value">
+                        <label for="stat-1-max-value">&nbspTotal :&nbsp</label>
+                        <input type="text"  name="stat-1-max-value" id="stat-1-max-value">
+                    </div>
+                </div>
+                <div class="stat-category upper-gap">
+                    <h3>Stat 2</h3>
+                    <div class="stat-name">
+                        <span>Name :&nbsp</span>
+                        <input type="text" name="stat-name-1" id="stat-name-2"
+                        >
+                    </div>
+                    <h3>Value</h3>
+                    <div class="stat-value flex-row1">
+                        
+                        <label for="stat-1-value">Current  :&nbsp</label>
+                        <input type="text" name="stat-1-value" id="stat-2-value">
+                        <label for="stat-1-max-value">&nbspTotal :&nbsp</label>
+                        <input type="text" name="stat-1-max-value" id="stat-2-max-value">
+                    </div>
+                </div>
+                <div class="stat-category upper-gap">
+                    <h3>Stat 3</h3>
+                    <div class="stat-name">
+                        <span>Name :&nbsp</span>
+                        <input type="text" name="stat-name-1" id="stat-name-3"
+                        >
+                    </div>
+                    <h3>Value</h3>
+                    <div class="stat-value flex-row1">
+                        
+                        <label for="stat-1-value">Current  :&nbsp</label>
+                        <input type="text" name="stat-1-value" id="stat-3-value">
+                        <label for="stat-1-max-value">&nbspTotal :&nbsp</label>
+                        <input type="text" name="stat-1-max-value" id="stat-3-max-value">
+                    </div>
+                </div>
+                <div class="stat-category  upper-gap">
+                    <h3>Stat 4</h3>
+                    <div class="stat-name">
+                        <span>Name :&nbsp</span>
+                        <input type="text" name="stat-name-1" id="stat-name-4"
+                        >
+                    </div>
+                    <h3>Value</h3>
+                    <div class="stat-value flex-row1">
+                        
+                        <label for="stat-1-value">Current  :&nbsp</label>
+                        <input type="text" name="stat-1-value" id="stat-4-value">
+                        <label for="stat-1-max-value">&nbspTotal :&nbsp</label>
+                        <input type="text" name="stat-1-max-value" id="stat-4-max-value">
+                    </div>
+                </div>
+                <div class="stat-category upper-gap">
+                    <h3>Stat 5</h3>
+                    <div class="stat-name">
+                        <span>Name :&nbsp</span>
+                        <input type="text" name="stat-name-1" id="stat-name-5"
+                        >
+                    </div>
+                    <h3>Value</h3>
+                    <div class="stat-value flex-row1">
+                        
+                        <label for="stat-1-value">Current  :&nbsp</label>
+                        <input type="text" name="stat-1-value" id="stat-5-value">
+                        <label for="stat-1-max-value">&nbspTotal :&nbsp</label>
+                        <input type="text" name="stat-1-max-value" id="stat-5-max-value">
+                    </div>
+                </div>
+                
+                </div>
+                </div>
+            </div>
+            <div class="center">
+                <input type="color" id="graph-color">
+                <button class="plot-button" id="plotButton" onclick="plotGraph(this.innerHTML)">Plot Line Graph</button>
+                
+            </div>
+        </div>
+        <div class="draw-cont">
+        <div class="svg-cont">
+            <svg  viewBox="-10 -50 450 450" class="chart"
+            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" pointer-events="auto" id="board" style="font-family:Calibri;">            
+        </svg>
+            
+            
+        </div>
+        <div class="download-button center">
+            <input type="button" name="download-svg" id="download-svg" value="Download as .svg" onclick="save_as_svg()">
+        </div>    
+    </div>
+        
+        </div>
+    </div>
+    
+    <script src="projectGraphPlotterJs.js"></script>
+    <script src="FileSaver.js"></script>
+</body>
+</html>
