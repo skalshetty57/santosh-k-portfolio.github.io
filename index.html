@@ -34,18 +34,16 @@
 
         </div>
     </div>
+    <script>
+        function startAnimation(){
+            var startTargetElement=document.getElementById("magic-nav");
+            startTargetElement.className="expand-nav-action";
+        }
+        function endAnimation(){
+            var endTargetElement=document.getElementById("magic-nav");
+            endTargetElement.className="collapse-nav-action";
+        }
+    </script>
 </div>
-<canvas style="position: absolute;left:0;top: 0;" id="canvas" ></canvas>
-<script src="cursorTrail.js"></script>
-<script>
-    function startAnimation(){
-        var startTargetElement=document.getElementById("magic-nav");
-        startTargetElement.className="expand-nav-action";
-    }
-    function endAnimation(){
-        var endTargetElement=document.getElementById("magic-nav");
-        endTargetElement.className="collapse-nav-action";
-    }
-</script>
 </body>
 </html>
