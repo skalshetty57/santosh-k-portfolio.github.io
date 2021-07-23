@@ -717,6 +717,22 @@ h2{
     animation: magic-collapse 1.5s linear both;
     
 }
+#reset-button:hover{
+    background-color: #29C7AC;
+    transition: background ease-in 0.15s;
+}
+.icons{
+    font-size: 0.5em!important;
+    color: #29C7AC;
+}
+.icons:hover{
+    cursor: pointer;
+}
+#contact-h1 a{
+    padding: 0;
+    display: inline-block;
+    width: auto;
+}
 @keyframes magic-collapse {
     0%{
         height: 100vh;
@@ -843,10 +859,20 @@ h2{
     .home-content-left{
         padding-left: 10vw;
     }
+    /* .info .skills{
+        width: 72vw;
+    }
+    <i class="fab fa-github"></i>
+    <i class="fab fa-linkedin"></i>
+    <i class="fas fa-envelope"></i>
+    .skill1,.skill2,.skill3,.skill4,.skill5,.skill6,.skill7{
+        width: 24vw;
+    } */
     .side_nav{
         height: 10vh;
         width: 100%;
         top: 0;
+        box-shadow: 5px 5px 10px rgb(226 184 170);
     }
     /* for project */
     .project-info:hover .project-body{

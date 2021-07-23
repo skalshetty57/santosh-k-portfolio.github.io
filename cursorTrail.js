@@ -132,12 +132,12 @@ c.addEventListener("mouseleave", function (event) {
 // animate() calls draw() then recursively calls itself
 // everytime the screen repaints via requestAnimationFrame().
 function animate() {
-	if(mouse.x===false){
+	if(mouse.x===false || mouse.x > w-4 || mouse.x < 4 || mouse.y > h-4 || mouse.y < 4){
 		draw1();
 	}
 	else 
 	draw();
-
+	// console.log(mouse.x);
 	// requestAnimationFrame(animate);
 }
 // setInterval(function(){console.log(window);},10000);
