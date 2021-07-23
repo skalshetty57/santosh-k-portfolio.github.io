@@ -200,7 +200,7 @@ p a:hover{
     color: white;
     font-size: 1em;
     font-family: "open sans", sans-serif;
-    size: 40;
+    
     background-color: inherit;
 }
 .form input:focus{
@@ -224,12 +224,16 @@ p a:hover{
     color: white;
     font-size: 1em;
     font-family: "open sans", sans-serif;
-    size: 40;
+    width: ;
     background-color: inherit;
 }
 .form #reset-button{
     background-color: rgb(194, 32, 133);
     border-radius: 5px;
+}
+.form-message{
+    display: flex;
+    flex-flow: column wrap;
 }
 /* about me */
 h2{
