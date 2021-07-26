@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="inclass.css">
+</head>
+<body>
+    <div class="quiz-cont wrap">
+        <div class="quiz-header"> The Quiz</div>
+    
+    <div class="questions">
+        <div class="quest">
+            <h3>1) This is question number...?</h3>
+            <div class="mcq-option">03</div>
+            <div class="mcq-option" data-correct="true">1</div>
+            <div class="mcq-option">20</div>
+            <div class="mcq-option">xyz</div>
+        </div>
+        <div class="quest">
+            <h3>2) This is question number...?</h3>
+            <div class="mcq-option">03</div>
+            <div class="mcq-option">12</div>
+            <div class="mcq-option" data-correct="true">2</div>
+            <div class="mcq-option">xyz</div>
+        </div>
+        <div class="quest">
+            <h3>3) This is question number...?</h3>
+            <div class="mcq-option">3c</div>
+            <div class="mcq-option">1</div>
+            <div class="mcq-option">20</div>
+            <div class="mcq-option" data-correct="true">3</div>
+        </div>
+        <!-- <div class="quest">
+            <h3>3) This is question number...?</h3>
+            <div class="mcq-option">3c</div>
+            <div class="mcq-option">1</div>
+            <div class="mcq-option">20</div>
+            <div class="mcq-option" data-correct="true">3</div>
+        </div> -->
+        <input type="button" value="Submit" id="quizSubmit" onclick="submitQuiz()">
+
+    </div>
+</div>
+<script>
+    let quests=document.getElementsByClassName("quest");
+    // console.log(quests[0]);
+    let num_quests=quests.length;
+    let correct=0;
+    let wrong=0;
+    let total=num_quests;
+    // console.log(num_quests);
+    for(let i=0;i<num_quests;i++){
+        // console.log(quests[i]);
+        quests[i].setAttribute("onclick","confirmAnswer(this)");
+    }
+    function confirmAnswer(s){
+        let clicker=event.target;
+        // console.log(s);
+        if(clicker.nodeName==="DIV"){
+            console.log('option');
+            console.log(clicker);
+            if(clicker.getAttribute("data-correct")==='true'){
+                clicker.style.background="green";
+                
+                correct++;
+            }
+            else{
+                clicker.style.background="red";
+                wrong++;
+
+            }
+            s.removeAttribute("onclick");
+        }
+    }
+    function submitQuiz(){
+        if(correct+wrong===num_quests)
+        document.location.href="inclass3.html?"+correct+"|"+wrong;
+        else
+        alert("Attempt all");
+    }
+</script>
+</body>
+</html>

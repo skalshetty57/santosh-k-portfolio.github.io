@@ -9,9 +9,12 @@
 </head>
 <body>
     <div class="wrap">
+        <div class="header">
+            <div class="quiz-show" id="quiz-display" onclick="displayQuiz()">Quiz </div>
         <div class="form-show" id="form-display" onclick="displayForm()">
             Form
         </div>
+    </div>
             <!-- Form</div> -->
         <div class="cont" id="whole-form">
         <!-- <form action="inclass2.html" method="GET"> -->
@@ -109,6 +112,9 @@
             else{
                 former.style.display="none"
             }
+        }
+        function displayQuiz(){
+            document.location.href="inclass3Quiz.html";
         }
     </script>
 </body>
