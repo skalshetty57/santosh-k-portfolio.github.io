@@ -30,6 +30,9 @@ body h1{
     padding:3% 0 1.5% 3%;
     margin:0
 }
+span a{
+    font-style: normal;
+}
 a{
     text-decoration: none;
     background-color: inherit;
@@ -224,7 +227,7 @@ p a:hover{
     color: white;
     font-size: 1em;
     font-family: "open sans", sans-serif;
-    width: ;
+    /* changed */
     background-color: inherit;
 }
 .form #reset-button{
@@ -887,4 +890,14 @@ h2{
         top: 3vh;
     }
 }
-
+#homeProjectLink{
+    text-decoration: underline;
+    text-decoration-color: #29C7AC;
+    font-style: normal;
+    transition: text-decoration-color 0.1s ease-in;
+}
+#homeProjectLink:hover{
+    color: white;
+    text-decoration-color: rgb(194, 32, 133);
+    
+}
